@@ -37,8 +37,10 @@ public class FeedbackSystemBase : BasePlugin, IPluginConfig<BaseConfigs>
         }
 
         var message = commandInfo.GetArg(1);
+        
+        message = message.Trim();
 
-        if (string.IsNullOrWhiteSpace(message) || message.Length < 5)
+        if (string.IsNullOrWhiteSpace(message) || message.Replace(" ", "").Length < 5)
         {
             commandInfo.ReplyToCommand(Localizer["Prefix"] + " " + Localizer["InvalidMessage"]);
             return;

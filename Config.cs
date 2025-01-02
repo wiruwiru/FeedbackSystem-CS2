@@ -8,17 +8,11 @@ public class BaseConfigs : BasePluginConfig
     [JsonPropertyName("WebhookUrl")]
     public string WebhookUrl { get; set; } = "";
 
-    [JsonPropertyName("UseHostname")]
-    public bool UseHostname { get; set; } = true;
-
     [JsonPropertyName("CommandCooldownSeconds")]
     public int CommandCooldownSeconds { get; set; } = 120;
 
     [JsonPropertyName("Command")]
     public List<string> Command { get; set; } = new List<string> { "css_feedback", ".feedback" };
-
-    [JsonPropertyName("EmbedImage")]
-    public bool EmbedImage { get; set; } = true;
 
     [JsonPropertyName("EmbedColor")]
     public string EmbedColor { get; set; } = "#ffb800";
