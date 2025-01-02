@@ -3,7 +3,7 @@ Allows players to send feedback on the server as an embed message to Discord.
 
 > This plugin is quite simple, I don't think it is necessary to make major changes, but if someone needs it to be improved, you can create an [issue](https://github.com/wiruwiru/FeedbackSystem-CS2/issues)
 
-
+https://github.com/user-attachments/assets/f094625d-23f2-4047-a10e-62658a780256
 
 ## Installation
 1. Install [CounterStrike Sharp](https://github.com/roflmuffin/CounterStrikeSharp) and [Metamod:Source](https://www.sourcemm.net/downloads.php/?branch=master).
