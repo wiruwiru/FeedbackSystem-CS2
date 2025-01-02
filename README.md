@@ -1,6 +1,8 @@
 # FeedbackSystem CS2
 Allows players to send feedback on the server as an embed message to Discord.
 
+> This plugin has not been finalized, what you see here is a pre-release, if I see that someone is interested I will finish it, but for the moment it is not a priority for me.
+
 ---
 
 ## Installation
