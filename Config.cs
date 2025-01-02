@@ -11,6 +11,9 @@ public class BaseConfigs : BasePluginConfig
     [JsonPropertyName("CommandCooldownSeconds")]
     public int CommandCooldownSeconds { get; set; } = 120;
 
+    [JsonPropertyName("MinMessageLength")]
+    public int MinMessageLength { get; set; } = 5;
+
     [JsonPropertyName("Command")]
     public List<string> Command { get; set; } = new List<string> { "css_feedback", ".feedback" };
 

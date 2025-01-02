@@ -36,11 +36,10 @@ public class FeedbackSystemBase : BasePlugin, IPluginConfig<BaseConfigs>
             return;
         }
 
-        var message = commandInfo.GetArg(1);
-        
+        var message = commandInfo.ArgString?.Trim() ?? string.Empty;
         message = message.Trim();
 
-        if (string.IsNullOrWhiteSpace(message) || message.Replace(" ", "").Length < 5)
+        if (string.IsNullOrWhiteSpace(message) || message.Replace(" ", "").Length < Config.MinMessageLength)
         {
             commandInfo.ReplyToCommand(Localizer["Prefix"] + " " + Localizer["InvalidMessage"]);
             return;
@@ -128,7 +127,6 @@ public class FeedbackSystemBase : BasePlugin, IPluginConfig<BaseConfigs>
             var payload = new { embeds = new[] { embed } };
 
             var json = JsonSerializer.Serialize(payload, new JsonSerializerOptions { WriteIndented = true });
-            Console.WriteLine("Payload JSON: " + json);
 
             var contentString = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await httpClient.PostAsync(webhookUrl, contentString);
@@ -136,19 +134,13 @@ public class FeedbackSystemBase : BasePlugin, IPluginConfig<BaseConfigs>
             if (!response.IsSuccessStatusCode)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"Failed to send embed. HTTP Status: {response.StatusCode}");
-                Console.WriteLine($"Response: {await response.Content.ReadAsStringAsync()}");
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Embed sent successfully.");
+                Console.WriteLine($"[FeedbackSystem] Failed to send embed. HTTP Status: {response.StatusCode}");
             }
         }
         catch (Exception e)
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"Error sending embed: {e.Message}");
+            Console.WriteLine($"[FeedbackSystem] Error: {e.Message}");
             Console.WriteLine(e.StackTrace);
         }
     }
