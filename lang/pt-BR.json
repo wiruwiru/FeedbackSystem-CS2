@@ -1,0 +1,20 @@
+﻿{
+  "Prefix": "[{GOLD}FEEDBACK{BLUE}SYSTEM{WHITE}]",
+  "CommandCooldownMessage": "{GOLD}Você deve esperar {RED}{0} {GOLD}segundos antes de usar este comando novamente.",
+  "FeedbackSendMessage": "{RED}Muito obrigado pelo seu feedback, é muito importante para nós, pois nos ajuda a continuar melhorando como comunidade.",
+  "InvalidMessage": "{RED}Você deve enviar uma mensagem com pelo menos cinco letras.",
+  "NoPlayer": "{RED}Este comando só pode ser usado por um jogador.",
+  
+  "EmbedAuthorName": "FeedbackSystem feito por luca.uy",
+  "EmbedTitle": "Um novo feedback foi enviado!",
+  "EmbedDescription": "Um usuário nos enviou um novo feedback, você pode ver a mensagem dele abaixo.",
+  "EmbedFooterText": "Powered by FeedbackSystem",
+
+  "HostnameField": "Servidor 🖥️",
+  "IPField": "IP 🌍",
+  "PlayerSendField": "Enviado por 👥",
+  "FeedbackMessage": "Mensagem de feedback",
+
+  "UnknownPlayer": "Desconhecido",
+  "UnknownIP": "Desconhecido"
+}
